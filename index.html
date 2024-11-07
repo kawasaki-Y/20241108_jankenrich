@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>壁打ちチャットツール</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <!-- プロフィールセクション -->
+  <div class="profile">
+    <div class="profile-info">
+      <h2>何でも話しかけてください</h2>
+      <p>3分間、事業について考える</p>
+      <p>好きな答えを入力してください</p>
+    </div>
+    <div class="profile-avatar">
+      <img src="avatar.png" alt="Avatar">
+    </div>
+  </div>
+
+  <!-- キャラクター選択セクション -->
+  <div class="character-selection">
+    <button onclick="setCharacter('kind_girl')">優しい女の子モード</button>
+    <button onclick="setCharacter('gentleman')">ヘヴィメタルモード</button>
+    <button onclick="setCharacter('punk_rocker')">ゾンビモード</button>
+  </div>
+
+
+  <!-- メッセージセクション -->
+  <div class="container">
+    <div class="messages">
+      <!-- Chat messages will be dynamically added here -->
+    </div>
+  </div>
+
+  <!-- チャット入力フォーム -->
+  <form class="chat-form" id="chat-form">
+    <input type="text" class="chat-input" id="chat-input" placeholder="Ask me...">
+    <button type="submit" class="chat-send" id="chat-send">
+      <img src="send-icon.png" width="20px" height="20px" alt="Send" id="send-img">
+    </button>
+    <div class="loader"></div>
+  </form>
+
+  <!-- JavaScript -->
+  <script src="./main.js"></script>
+</body>
+
+</html>
