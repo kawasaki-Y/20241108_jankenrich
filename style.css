@@ -1,0 +1,210 @@
+/* 基本設定 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* プロフィールセクション */
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: #b1d7d1;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.profile-info h2 {
+  margin-bottom: 5px;
+  font-size: 24px;
+  color: #fff;
+}
+
+.profile-info p {
+  margin: 2px 0;
+  color: #e0f7f1;
+}
+
+.profile-avatar img {
+  width: 60px;
+  height: 60px;
+  margin-top: 10px;
+}
+
+/* メッセージコンテナ */
+.container {
+  flex: 1;
+  width: 100%;
+  max-width: 400px;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* メッセージグループ */
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* メッセージ */
+.message {
+  max-width: 80%;
+  padding: 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  line-height: 1.5;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  display: inline-block;
+}
+
+/* ユーザーメッセージ */
+.user-message {
+  align-self: flex-end;
+  background-color: #2D81D8;
+  color: #fff;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* ボットメッセージ */
+.bot-message {
+  align-self: flex-start;
+  background-color: #cde0e5;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.typing {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #333;
+  animation: typing 2s steps(30, end), blink-caret 0.5s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: #333;
+  }
+}
+
+/* チャット入力フォーム */
+.chat-form {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  /* 余白を少し大きくして見やすくする */
+  background-color: white;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  max-width: 600px;
+  /* フォームの幅を最大600pxに制限 */
+  margin: auto;
+  /* 中央揃え */
+}
+
+.chat-input {
+  flex: 1;
+  border: none;
+  border-radius: 8px;
+  /* 丸みをつけて視覚的に大きく見せる */
+  padding: 15px;
+  /* 入力エリアを広くする */
+  font-size: 18px;
+  /* 文字を少し大きく */
+  margin-right: 10px;
+}
+
+.chat-send {
+  background-color: #2D81D8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  /* 丸みをつける */
+  padding: 15px 20px;
+  /* 送信ボタンも大きくする */
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 10px;
+    /* スマホでは余白を減らしてスペースを確保 */
+  }
+
+  .chat-form {
+    padding: 10px;
+    /* スマホ用に余白を少し減らす */
+  }
+
+  .chat-input {
+    padding: 12px;
+    /* スマホ用に少しコンパクトに */
+    font-size: 16px;
+    /* フォントサイズを小さくして全体のバランスをとる */
+  }
+
+  .chat-send {
+    padding: 12px 15px;
+    /* 送信ボタンも少しコンパクトに */
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .profile,
+  .container,
+  .chat-form {
+    max-width: 100%;
+    /* スマホの小さな画面に合わせて幅を広げる */
+  }
+
+  .chat-input,
+  .chat-send {
+    font-size: 14px;
+    /* さらに小さい画面ではフォントサイズを小さく */
+  }
+}
